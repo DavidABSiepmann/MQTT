@@ -8,7 +8,7 @@ COPY config.xml /opt/hivemq/conf/config.xml
 
 # Expose MQTT, Websocket, and clustering ports
 # EXPOSE 1883 8000 7800
-
+USER root
 RUN apt-get update
 RUN apt-get upgrade -y
 

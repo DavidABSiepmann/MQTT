@@ -9,7 +9,10 @@ COPY config.xml /opt/hivemq/conf/config.xml
 # Expose MQTT, Websocket, and clustering ports
 # EXPOSE 1883 8000 7800
 
-RUN apt-get update && apt-get install -y apt-transport-https
+RUN apt-get update
+RUN apt-get upgrade -y
+
+RUN apt-get install -y apt-transport-https
 
 # Install Nginx for reverse proxy
 RUN apt-get update && \
